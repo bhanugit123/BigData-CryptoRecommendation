@@ -158,3 +158,50 @@ To create and connect to database deployments in Atlas, follow these steps:
    - Connect via BI Connector for Atlas:
      If you need to connect business intelligence (BI) tools to your Atlas database deployment, you can use the BI Connector for Atlas. Follow the documentation provided by Atlas to configure and connect the BI Connector.
 By following these steps, you can create and connect to your database deployments in Atlas, allowing you to easily store and manage your data
+  
+  
+Forecasting cryptocurrency prices using ARIMA Model:
+  
+Data Preprocessing:
+
+The 'Timestamp' column is converted to datetime format for time-based analysis.
+The data is resampled to daily frequency using the mean value.
+The resampled data is further resampled to monthly frequency for the analysis.
+
+Seasonal Decomposition:
+
+Seasonal decomposition is performed on the monthly data to identify trend, seasonality, and residual components using the seasonal_decompose() function from the statsmodels library.
+
+The decomposition plot helps visualize the components and understand the underlying patterns in the data.
+
+Box-Cox Transformation:
+
+To stabilize the variance of the data, the Box-Cox transformation is applied using the boxcox() function from the scipy library.
+The lambda value obtained from the transformation is saved for future use.
+
+Seasonal Differentiation:
+
+Seasonal differentiation is performed by taking the difference between the Box-Cox transformed series and its lagged value with a seasonal lag of 12 months.
+This step removes the seasonal component from the data and prepares it for modeling.
+
+Model Selection:
+
+The SARIMA (Seasonal ARIMA) model is selected for cryptocurrency price forecasting.
+The SARIMA model is characterized by three main components: p (autoregressive order), d (integration order), and q (moving average order). Additionally, it includes seasonal components P, D, and Q.
+We evaluate a range of parameter combinations using the SARIMAX model from the statsmodels library.
+The AIC (Akaike Information Criterion) is used as the model selection criterion, where a lower value indicates a better fit.
+Best Model and Forecasting:
+
+The model with the lowest AIC is selected as the best model for forecasting.
+Forecasts are generated using the best model by calling the predict() method.
+The inverse Box-Cox transformation is applied to obtain the final forecasted values using the lambda value obtained earlier.
+
+Evaluation Metrics:
+To evaluate the performance of the ARIMA model, we consider the following metrics:
+
+Dickey–Fuller Test: It tests the stationarity of the differenced series. A p-value below a certain significance level (e.g., 0.05) suggests the series is stationary.
+Residual Analysis: Residuals are examined for randomness and stationarity. The ACF (Autocorrelation Function) plot is used to detect any remaining autocorrelation in the residuals.
+Visual Comparison: The original cryptocurrency price data and the forecasted values are plotted together to visually assess the model's performance.
+Results:
+
+The Dickey–Fuller test on the differenced series after the Box-Cox transformation yielded a p-value of 0.0137, suggesting the series is stationary.
