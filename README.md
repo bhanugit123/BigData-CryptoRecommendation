@@ -2,7 +2,7 @@
 Big data project for course CS-GY 6513 at NYU
 
 # Team Members
-1) Bhanu Prakash Thipparthi
+1)Bhanu Prakash Thipparthi
 <br/>
 2) Madhu Vemana
 <br/>
