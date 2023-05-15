@@ -1,6 +1,13 @@
 # BigData
 Big data project for course CS-GY 6513 at NYU
 
+# Team Members
+1)Bhanu Prakash Thipparthi
+2)Madhu Vemana
+3)Vishnu Vardhan Naidu Yasarapu
+4)Sai Goutham Nelanuthula
+5)Sarath Chandra Mendu
+
 To run the app go to UI folder 
 
 # Introduction
