@@ -195,6 +195,9 @@ Dickey–Fuller Test: It tests the stationarity of the differenced series. A p-v
 Residual Analysis: Residuals are examined for randomness and stationarity. The ACF (Autocorrelation Function) plot is used to detect any remaining autocorrelation in the residuals.
   
 Visual Comparison: The original cryptocurrency price data and the forecasted values are plotted together to visually assess the model's performance.
+  
+![download (3)](https://github.com/vemanamadhu/BigData-CryptoRecommendation/assets/99688712/89dd673b-f43e-4058-8bf0-444c23fbe641)
+
 Results:
 
 The Dickey–Fuller test on the differenced series after the Box-Cox transformation yielded a p-value of 0.0137, suggesting the series is stationary.
